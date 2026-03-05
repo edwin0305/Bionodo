@@ -5,7 +5,6 @@
       <module fileurl="file://$PROJECT_DIR$/Catalogo_Service/Catalogo_Service.iml" filepath="$PROJECT_DIR$/Catalogo_Service/Catalogo_Service.iml" />
       <module fileurl="file://$PROJECT_DIR$/Posgress_Service/Posgress_Service.iml" filepath="$PROJECT_DIR$/Posgress_Service/Posgress_Service.iml" />
       <module fileurl="file://$PROJECT_DIR$/Proyecto.iml" filepath="$PROJECT_DIR$/Proyecto.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Users_Service/Users_Service.iml" filepath="$PROJECT_DIR$/Users_Service/Users_Service.iml" />
     </modules>
   </component>
 </project>

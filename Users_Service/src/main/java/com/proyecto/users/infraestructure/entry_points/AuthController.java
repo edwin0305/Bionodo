@@ -1,0 +1,56 @@
+package com.proyecto.users.infraestructure.entry_points;
+
+import com.proyecto.users.domain.exceptions.AdminNotFoundException;
+import com.proyecto.users.domain.exceptions.IncorrectCredentialsException;
+import com.proyecto.users.domain.exceptions.UserNotFoundException;
+import com.proyecto.users.domain.usecase.AdminUseCase;
+import com.proyecto.users.domain.usecase.UsuarioUseCase;
+import com.proyecto.users.infraestructure.driver_adapter.jpa_repository.admin.AdminData;
+import com.proyecto.users.infraestructure.driver_adapter.jpa_repository.usuario.UsuarioData;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController //indica que esta clase es un controlador, y se van a crear APIs que se van a exponer
+@RequestMapping("/api/proyecto/auth") //parametrizar URLs
+@RequiredArgsConstructor
+public class AuthController {
+    private final UsuarioUseCase usuarioUseCase;
+    private final AdminUseCase adminUseCase;
+
+    @PostMapping("/loginUsuario")
+    public ResponseEntity<String> loginUsuario(@RequestBody UsuarioData usuarioData) {
+        try {
+            String respuesta = usuarioUseCase.loginUsuario(
+                    usuarioData.getEmail(),
+                    usuarioData.getPassword()
+            );
+            return ResponseEntity.ok(respuesta); // Credenciales correctas
+        } catch (UserNotFoundException | IncorrectCredentialsException e) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(e.getMessage());
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Error al procesar la solicitud");
+        }
+    }
+
+
+
+    @PostMapping("/loginAdmin")
+    public ResponseEntity<String> loginAdmin(@RequestBody AdminData adminData) {
+        try {
+            String respuesta = adminUseCase.loginAdmin(adminData.getEmail(), adminData.getPassword());
+            return ResponseEntity.ok(respuesta); // Credenciales correctas
+        } catch (AdminNotFoundException | IncorrectCredentialsException e) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(e.getMessage());
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Error al procesar la solicitud");
+        }
+    }
+
+}
+
+
