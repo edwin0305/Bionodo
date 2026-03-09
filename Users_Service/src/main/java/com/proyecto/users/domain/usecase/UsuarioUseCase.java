@@ -54,12 +54,6 @@ public class UsuarioUseCase {
         usuario.setPassword(encrypterGateway.encrypt(usuario.getPassword()));
         usuarioGateway.guardarUsuario(usuario);
         Usuario usuarioGuardado = usuarioGateway.guardarUsuario(usuario);
-        Notificacion mensajeNotificacion = Notificacion.builder()
-                .tipo("Registro Usuario")
-                .email(usuarioGuardado.getEmail())
-                .numeroTelefono(usuarioGuardado.getTelefono())
-                .mensaje("Usuario registrado con exito")
-                .build();
 
 
 
