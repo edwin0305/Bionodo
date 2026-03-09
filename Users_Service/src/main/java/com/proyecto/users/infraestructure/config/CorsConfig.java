@@ -3,7 +3,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-
+//mauro esto toca cambiarlo pero por el momento no me acuerdo muy bien porque esto era para gitpage //
 @Configuration
 public class CorsConfig {
     @Bean
