@@ -1,4 +1,5 @@
 package com.proyecto.users.infraestructure.entry_points;
+
 import com.proyecto.users.domain.model.Admin;
 import com.proyecto.users.domain.model.Usuario;
 import com.proyecto.users.domain.usecase.AdminUseCase;

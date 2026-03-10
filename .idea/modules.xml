@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Catalogo_Service/Catalogo_Service.iml" filepath="$PROJECT_DIR$/Catalogo_Service/Catalogo_Service.iml" />
       <module fileurl="file://$PROJECT_DIR$/Posgress_Service/Posgress_Service.iml" filepath="$PROJECT_DIR$/Posgress_Service/Posgress_Service.iml" />
       <module fileurl="file://$PROJECT_DIR$/Proyecto.iml" filepath="$PROJECT_DIR$/Proyecto.iml" />
     </modules>
