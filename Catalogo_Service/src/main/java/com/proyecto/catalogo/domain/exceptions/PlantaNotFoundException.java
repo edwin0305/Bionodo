@@ -1,7 +1,7 @@
-package com.proyecto.users.domain.exceptions;
+package com.proyecto.catalogo.domain.exceptions;
 
-public class UserNotFoundException extends RuntimeException {
-    public UserNotFoundException(String message) {
+public class PlantaNotFoundException extends RuntimeException {
+    public PlantaNotFoundException(String message) {
         super(message);
     }
 }
