@@ -5,6 +5,8 @@ import com.proyecto.catalogo.domain.model.Planta;
 import com.proyecto.catalogo.domain.model.gateway.PlantaGateway;
 import lombok.RequiredArgsConstructor;
 
+import java.util.List;
+
 @RequiredArgsConstructor
 public class PlantaUseCase {
     private final PlantaGateway plantaGateway;
@@ -47,9 +49,50 @@ public class PlantaUseCase {
 
         return "Planta guardada correctamente";
 
-
-
     }
+    public Planta buscarPorNombre(String Nombre_Cientifico) {
+        try {
+            Planta planta = plantaGateway.buscarPorNombre_Cientifico(Nombre_Cientifico);
+            return planta; // puede venir nulo si no existe
+        } catch (Exception e) {
+            System.out.println("Error al buscar Planta: " + e.getMessage());
+            return null;
+        }
+    }
+    public void eliminarPlanta(String Nombre_Cientifico) {
+        try{
+            Planta planta = plantaGateway.buscarPorNombre_Cientifico(Nombre_Cientifico);
+            if(planta==null){
+                throw new PlantaNotFoundException("No existe Planta con el Nombre cientifico: " + Nombre_Cientifico);
+            }
+            plantaGateway.eliminarPorNombre_Cientifico(Nombre_Cientifico);
+            System.out.println("Planta eliminado con éxito: " + Nombre_Cientifico);
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+    public Planta actualizarPlanta(Planta planta) {
+        if (planta.getNombre_cientifico() == null || planta.getNombre_cientifico().trim().isEmpty()) {
+            throw new PlantaNotFoundException("El Nombre cientifico es obligatorio para actualizar");
+        }
+
+        Planta plantaExistente = plantaGateway.buscarPorNombre_Cientifico(planta.getNombre_cientifico());
+        if (plantaExistente == null) {
+            // Retorna null si no existe
+            throw new PlantaNotFoundException("Planta no encontrada");
+        }
+
+        // Mantener el ID original del usuario existente
+        planta.setNombre_cientifico(plantaExistente.getNombre_cientifico());
+
+        // Actualizar en base de datos
+        return plantaGateway.actualizarPlanta(planta);
+    }
+    public List<Planta> listarPlantas() {
+        return plantaGateway.listarPlantas();
+    }
+
+
 }
 
 

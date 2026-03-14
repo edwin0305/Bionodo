@@ -8,7 +8,7 @@ public interface PlantaGateway {
     Planta guardarPlanta(Planta planta);
     Planta actualizarPlanta(Planta planta);
     Planta buscarPorNombre_Cientifico(String Nombre_Cientifico);
-    void eliminarPorNombre(String Nombre);
-    List<Planta> listarPlanta();
+    void eliminarPorNombre_Cientifico(String Nombre_Cientifico);
+    List<Planta> listarPlantas();
 
 }
