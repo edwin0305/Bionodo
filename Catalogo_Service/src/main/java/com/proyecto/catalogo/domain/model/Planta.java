@@ -4,6 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.List;
+
 //SIEMPRE DEBEN IR ESTAS ETIQUETAS
 @AllArgsConstructor //CREACION DEL CONSTRUCTOR
 @NoArgsConstructor
@@ -12,6 +15,7 @@ import lombok.Setter;
 
 public class Planta {
         //Atributos
+        private Long id;
         private String nombre_cientifico;
         private String nombre_comun;
         private String morfologia;
@@ -20,10 +24,12 @@ public class Planta {
         private String biodiversidad;
         private String beneficios_ambientales;
         private String recomendaciones_de_cuidado;
+        private List<String> fotos;
 
 
 
 
-    }
+
+}
 
 
