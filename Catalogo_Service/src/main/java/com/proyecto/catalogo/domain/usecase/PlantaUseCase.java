@@ -2,6 +2,7 @@ package com.proyecto.catalogo.domain.usecase;
 
 import com.proyecto.catalogo.domain.exceptions.PlantaNotFoundException;
 import com.proyecto.catalogo.domain.model.Planta;
+import com.proyecto.catalogo.domain.model.gateway.ArchivoGateway;
 import com.proyecto.catalogo.domain.model.gateway.PlantaGateway;
 import lombok.RequiredArgsConstructor;
 
@@ -11,6 +12,7 @@ import java.util.List;
 public class PlantaUseCase {
 
     private final PlantaGateway plantaGateway;
+    private final ArchivoGateway archivoGateway;
 
     public String guardarPlanta(Planta planta) {
 
@@ -49,6 +51,13 @@ public class PlantaUseCase {
         return "Planta guardada correctamente";
     }
 
+    public String guardarPlanta(Planta planta, byte[] imagen, String nombreOriginal) {
+        String rutaImagen = archivoGateway.guardarArchivo(imagen, nombreOriginal);
+        planta.setFotos(List.of(rutaImagen));
+
+        return guardarPlanta(planta);
+    }
+
     public Planta buscarPorNombre(String nombreCientifico) {
         try {
             return plantaGateway.buscarPorNombreCientifico(nombreCientifico);
@@ -63,6 +72,12 @@ public class PlantaUseCase {
 
         if (planta == null) {
             throw new PlantaNotFoundException("No existe planta con el nombre científico: " + nombreCientifico);
+        }
+
+        if (planta.getFotos() != null && !planta.getFotos().isEmpty()) {
+            for (String rutaFoto : planta.getFotos()) {
+                archivoGateway.eliminarArchivo(rutaFoto);
+            }
         }
 
         plantaGateway.eliminarPorNombreCientifico(nombreCientifico);

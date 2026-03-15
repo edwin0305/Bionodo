@@ -1,5 +1,6 @@
 package com.proyecto.catalogo.application.config;
 
+import com.proyecto.catalogo.domain.model.gateway.ArchivoGateway;
 import com.proyecto.catalogo.domain.model.gateway.InsigniaGateway;
 import com.proyecto.catalogo.domain.model.gateway.NodoMapaGateway;
 import com.proyecto.catalogo.domain.model.gateway.PlantaGateway;
@@ -13,8 +14,8 @@ import org.springframework.context.annotation.Configuration;
 public class CatalogoUseCaseConfig {//por cada caso de uso se agrega eso
     @Bean //indicar a spring que esa clase es un componente
     //por cada caso de uso se agrega eso
-    public PlantaUseCase plantaUseCase(PlantaGateway plantaGateway) {
-        return new PlantaUseCase(plantaGateway);
+    public PlantaUseCase plantaUseCase(PlantaGateway plantaGateway, ArchivoGateway archivoGateway) {
+        return new PlantaUseCase(plantaGateway, archivoGateway);
     }
 
     @Bean

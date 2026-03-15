@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -73,5 +74,44 @@ public class PlantaController {
     @GetMapping("/listar")
     public ResponseEntity<List<Planta>> listarPlantas() {
         return ResponseEntity.ok(plantaUseCase.listarPlantas());
+
+
+    }
+
+    @PostMapping(value = "/saveimg", consumes = "multipart/form-data")
+    public ResponseEntity<String> savePlantaConImagen(
+            @RequestParam String nombreCientifico,
+            @RequestParam String nombreComun,
+            @RequestParam String morfologia,
+            @RequestParam String origen,
+            @RequestParam String tipoDeReproduccion,
+            @RequestParam String biodiversidad,
+            @RequestParam String beneficiosAmbientales,
+            @RequestParam String recomendacionesDeCuidado,
+            @RequestParam("imagen") MultipartFile imagen
+    ) {
+        try {
+            Planta planta = new Planta();
+            planta.setNombreCientifico(nombreCientifico);
+            planta.setNombreComun(nombreComun);
+            planta.setMorfologia(morfologia);
+            planta.setOrigen(origen);
+            planta.setTipoDeReproduccion(tipoDeReproduccion);
+            planta.setBiodiversidad(biodiversidad);
+            planta.setBeneficiosAmbientales(beneficiosAmbientales);
+            planta.setRecomendacionesDeCuidado(recomendacionesDeCuidado);
+
+            String resultado = plantaUseCase.guardarPlanta(
+                    planta,
+                    imagen.getBytes(),
+                    imagen.getOriginalFilename()
+            );
+
+            return ResponseEntity.ok(resultado);
+
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body("Error al guardar la planta con imagen: " + e.getMessage());
+        }
     }
 }
