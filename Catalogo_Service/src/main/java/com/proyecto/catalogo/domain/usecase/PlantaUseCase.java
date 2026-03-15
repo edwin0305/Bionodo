@@ -9,99 +9,85 @@ import java.util.List;
 
 @RequiredArgsConstructor
 public class PlantaUseCase {
+
     private final PlantaGateway plantaGateway;
 
-    public String guardarPlanta(Planta planta){
+    public String guardarPlanta(Planta planta) {
 
-        if (planta.getNombre_cientifico() == null || planta.getNombre_cientifico().trim().isEmpty()){
-        return "El Nombre Cientifico es obligatorio";
+        if (planta.getNombreCientifico() == null || planta.getNombreCientifico().trim().isEmpty()) {
+            return "El nombre científico es obligatorio";
         }
-        if (planta.getNombre_comun()==null || planta.getNombre_comun().trim().isEmpty()){
-            return "El campo nombre comun es obligatorio";
+        if (planta.getNombreComun() == null || planta.getNombreComun().trim().isEmpty()) {
+            return "El campo nombre común es obligatorio";
         }
-        if (planta.getMorfologia()==null || planta.getMorfologia().trim().isEmpty()){
-            return "El campo Morfologia es obligatorio";
+        if (planta.getMorfologia() == null || planta.getMorfologia().trim().isEmpty()) {
+            return "El campo morfología es obligatorio";
         }
-        if (planta.getOrigen()==null || planta.getOrigen().trim().isEmpty()){
-            return "El campo Origen es obligatorio";
+        if (planta.getOrigen() == null || planta.getOrigen().trim().isEmpty()) {
+            return "El campo origen es obligatorio";
         }
-        if (planta.getTipo_de_reproduccion()==null || planta.getTipo_de_reproduccion().trim().isEmpty()){
-            return "El campo Tipo de reproduccion es obligatorio";
+        if (planta.getTipoDeReproduccion() == null || planta.getTipoDeReproduccion().trim().isEmpty()) {
+            return "El campo tipo de reproducción es obligatorio";
+        }
+        if (planta.getBiodiversidad() == null || planta.getBiodiversidad().trim().isEmpty()) {
+            return "El campo biodiversidad es obligatorio";
+        }
+        if (planta.getBeneficiosAmbientales() == null || planta.getBeneficiosAmbientales().trim().isEmpty()) {
+            return "El campo beneficios ambientales es obligatorio";
+        }
+        if (planta.getRecomendacionesDeCuidado() == null || planta.getRecomendacionesDeCuidado().trim().isEmpty()) {
+            return "El campo recomendaciones de cuidado es obligatorio";
         }
 
-        if (planta.getBiodiversidad()==null || planta.getBiodiversidad().trim().isEmpty()){
-            return "El campo Biodiversidad es obligatorio";
+        Planta existente = plantaGateway.buscarPorNombreCientifico(planta.getNombreCientifico());
+        if (existente != null) {
+            throw new PlantaNotFoundException("Ya existe una planta con ese nombre científico");
         }
-        if (planta.getBeneficios_ambientales()==null || planta.getBeneficios_ambientales().trim().isEmpty()){
-            return "El campo Beneficios ambientales es obligatorio";
-        }
-        if (planta.getRecomendaciones_de_cuidado()==null || planta.getRecomendaciones_de_cuidado().trim().isEmpty()){
-            return "El campo Recomendaciones del cuidado es obligatorio";
-        }
-        Planta existente = plantaGateway.buscarPorNombre_Cientifico(planta.getNombre_cientifico());
-        if (existente!=null){
-            throw new PlantaNotFoundException("Ya existe una planta con esa informacion");
-        }
+
         plantaGateway.guardarPlanta(planta);
-        Planta plantaGuardado = plantaGateway.guardarPlanta(planta);
-
-
 
         return "Planta guardada correctamente";
-
     }
-    public Planta buscarPorNombre(String Nombre_Cientifico) {
+
+    public Planta buscarPorNombre(String nombreCientifico) {
         try {
-            Planta planta = plantaGateway.buscarPorNombre_Cientifico(Nombre_Cientifico);
-            return planta; // puede venir nulo si no existe
+            return plantaGateway.buscarPorNombreCientifico(nombreCientifico);
         } catch (Exception e) {
-            System.out.println("Error al buscar Planta: " + e.getMessage());
+            System.out.println("Error al buscar planta: " + e.getMessage());
             return null;
         }
     }
-    public void eliminarPlanta(String Nombre_Cientifico) {
-        try{
-            Planta planta = plantaGateway.buscarPorNombre_Cientifico(Nombre_Cientifico);
-            if(planta==null){
-                throw new PlantaNotFoundException("No existe Planta con el Nombre cientifico: " + Nombre_Cientifico);
-            }
-            plantaGateway.eliminarPorNombre_Cientifico(Nombre_Cientifico);
-            System.out.println("Planta eliminado con éxito: " + Nombre_Cientifico);
-        }catch(Exception e){
-            System.out.println(e.getMessage());
-        }
-    }
-    public Planta actualizarPlanta(Planta planta) {
-        if (planta.getNombre_cientifico() == null || planta.getNombre_cientifico().trim().isEmpty()) {
-            throw new PlantaNotFoundException("El Nombre cientifico es obligatorio para actualizar");
+
+    public void eliminarPlanta(String nombreCientifico) {
+        Planta planta = plantaGateway.buscarPorNombreCientifico(nombreCientifico);
+
+        if (planta == null) {
+            throw new PlantaNotFoundException("No existe planta con el nombre científico: " + nombreCientifico);
         }
 
-        Planta plantaExistente = plantaGateway.buscarPorNombre_Cientifico(planta.getNombre_cientifico());
+        plantaGateway.eliminarPorNombreCientifico(nombreCientifico);
+    }
+
+    public Planta actualizarPlanta(Planta planta) {
+        if (planta.getNombreCientifico() == null || planta.getNombreCientifico().trim().isEmpty()) {
+            throw new PlantaNotFoundException("El nombre científico es obligatorio para actualizar");
+        }
+
+        Planta plantaExistente = plantaGateway.buscarPorNombreCientifico(planta.getNombreCientifico());
         if (plantaExistente == null) {
-            // Retorna null si no existe
             throw new PlantaNotFoundException("Planta no encontrada");
         }
 
-        // Mantener el ID original del usuario existente
-        planta.setNombre_cientifico(plantaExistente.getNombre_cientifico());
+        // Mantener el ID original para que se actualice el registro correcto
+        planta.setId(plantaExistente.getId());
 
-        // Actualizar en base de datos
         return plantaGateway.actualizarPlanta(planta);
     }
+
     public List<Planta> listarPlantas() {
         return plantaGateway.listarPlantas();
     }
-
-
 }
-
-
-
-
-
-
-
-
 
 
 

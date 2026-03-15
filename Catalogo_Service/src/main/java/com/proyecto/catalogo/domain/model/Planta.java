@@ -14,21 +14,18 @@ import java.util.List;
 @Getter //OBTENER ATRIBUTO
 
 public class Planta {
+
         //Atributos
         private Long id;
-        private String nombre_cientifico;
-        private String nombre_comun;
+        private String nombreCientifico;
+        private String nombreComun;
         private String morfologia;
         private String origen;
-        private String tipo_de_reproduccion;
+        private String tipoDeReproduccion;
         private String biodiversidad;
-        private String beneficios_ambientales;
-        private String recomendaciones_de_cuidado;
+        private String beneficiosAmbientales;
+        private String recomendacionesDeCuidado;
         private List<String> fotos;
-
-
-
-
 
 }
 

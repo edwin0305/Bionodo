@@ -18,10 +18,10 @@ public class PlantaData {
     private Long id;
 
     @Column(name = "nombre_cientifico", nullable = false)
-    private String nombre_cientifico;
+    private String nombreCientifico;
 
     @Column(name = "nombre_comun", nullable = false, unique = true)
-    private String nombre_comun;
+    private String nombreComun;
 
     @Column(nullable = false, columnDefinition = "TEXT")
     private String morfologia;
@@ -30,16 +30,16 @@ public class PlantaData {
     private String origen;
 
     @Column(name = "tipo_de_reproduccion", nullable = false)
-    private String tipo_de_reproduccion;
+    private String tipoDeReproduccion;
 
     @Column(nullable = false, columnDefinition = "TEXT")
     private String biodiversidad;
 
     @Column(name = "beneficios_ambientales", nullable = false, columnDefinition = "TEXT")
-    private String beneficios_ambientales;
+    private String beneficiosAmbientales;
 
     @Column(name = "recomendaciones_de_cuidado", nullable = false, columnDefinition = "TEXT")
-    private String recomendaciones_de_cuidado;
+    private String recomendacionesDeCuidado;
 
     @ElementCollection
     @CollectionTable(name = "planta_fotos", joinColumns = @JoinColumn(name = "planta_id"))
