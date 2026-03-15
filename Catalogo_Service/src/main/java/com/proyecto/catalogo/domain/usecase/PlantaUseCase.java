@@ -51,10 +51,17 @@ public class PlantaUseCase {
         return "Planta guardada correctamente";
     }
 
-    public String guardarPlanta(Planta planta, byte[] imagen, String nombreOriginal) {
-        String rutaImagen = archivoGateway.guardarArchivo(imagen, nombreOriginal);
-        planta.setFotos(List.of(rutaImagen));
+    public String guardarPlanta(Planta planta, List<byte[]> imagenes, List<String> nombresOriginales) {
+        List<String> rutas = new java.util.ArrayList<>();
 
+        if (imagenes != null && nombresOriginales != null && imagenes.size() == nombresOriginales.size()) {
+            for (int i = 0; i < imagenes.size(); i++) {
+                String rutaImagen = archivoGateway.guardarArchivo(imagenes.get(i), nombresOriginales.get(i));
+                rutas.add(rutaImagen);
+            }
+        }
+
+        planta.setFotos(rutas);
         return guardarPlanta(planta);
     }
 

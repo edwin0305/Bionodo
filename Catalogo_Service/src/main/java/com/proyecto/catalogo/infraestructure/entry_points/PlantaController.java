@@ -79,7 +79,7 @@ public class PlantaController {
     }
 
     @PostMapping(value = "/saveimg", consumes = "multipart/form-data")
-    public ResponseEntity<String> savePlantaConImagen(
+    public ResponseEntity<String> savePlantaConImagenes(
             @RequestParam String nombreCientifico,
             @RequestParam String nombreComun,
             @RequestParam String morfologia,
@@ -88,7 +88,7 @@ public class PlantaController {
             @RequestParam String biodiversidad,
             @RequestParam String beneficiosAmbientales,
             @RequestParam String recomendacionesDeCuidado,
-            @RequestParam("imagen") MultipartFile imagen
+            @RequestParam("imagenes") MultipartFile[] imagenes
     ) {
         try {
             Planta planta = new Planta();
@@ -101,17 +101,25 @@ public class PlantaController {
             planta.setBeneficiosAmbientales(beneficiosAmbientales);
             planta.setRecomendacionesDeCuidado(recomendacionesDeCuidado);
 
-            String resultado = plantaUseCase.guardarPlanta(
-                    planta,
-                    imagen.getBytes(),
-                    imagen.getOriginalFilename()
-            );
+            List<byte[]> contenidos = new java.util.ArrayList<>();
+            List<String> nombres = new java.util.ArrayList<>();
+
+            if (imagenes != null) {
+                for (MultipartFile imagen : imagenes) {
+                    if (!imagen.isEmpty()) {
+                        contenidos.add(imagen.getBytes());
+                        nombres.add(imagen.getOriginalFilename());
+                    }
+                }
+            }
+
+            String resultado = plantaUseCase.guardarPlanta(planta, contenidos, nombres);
 
             return ResponseEntity.ok(resultado);
 
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-                    .body("Error al guardar la planta con imagen: " + e.getMessage());
+                    .body("Error al guardar la planta con imágenes: " + e.getMessage());
         }
     }
 }
