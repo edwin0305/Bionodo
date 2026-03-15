@@ -1,9 +1,16 @@
 package com.proyecto.catalogo.infraestructure.driver_adapter.jpa_repository.planta;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
-
+@Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(name = "planta")
+@Data
 public class PlantaData {
 
     @Id
