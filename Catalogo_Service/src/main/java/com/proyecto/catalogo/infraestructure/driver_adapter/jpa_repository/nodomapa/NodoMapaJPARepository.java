@@ -2,6 +2,6 @@ package com.proyecto.catalogo.infraestructure.driver_adapter.jpa_repository.nodo
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface NodoMapaRepository extends JpaRepository<NodoMapaData, Long> {
+public interface NodoMapaJPARepository extends JpaRepository<NodoMapaData, Long> {
     NodoMapaData finbyCodigoNodo(String codigoNodo);
 }

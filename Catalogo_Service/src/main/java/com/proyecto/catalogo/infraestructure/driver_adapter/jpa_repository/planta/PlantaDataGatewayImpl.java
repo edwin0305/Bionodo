@@ -3,7 +3,7 @@ package com.proyecto.catalogo.infraestructure.driver_adapter.jpa_repository.plan
 import com.proyecto.catalogo.domain.model.Planta;
 import com.proyecto.catalogo.domain.model.gateway.PlantaGateway;
 import com.proyecto.catalogo.infraestructure.mapper.MapperPlanta;
-import jakarta.transaction.Transactional;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
