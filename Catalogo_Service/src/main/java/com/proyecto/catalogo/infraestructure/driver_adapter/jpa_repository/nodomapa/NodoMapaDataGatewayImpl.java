@@ -12,27 +12,45 @@ import java.util.List;
 @RequiredArgsConstructor
 public class NodoMapaDataGatewayImpl implements NodoMapaGateway {
 
-    private final MapperNodoMapa mapperNodoMapa;
     private final NodoMapaJPARepository repository;
-
+    private final MapperNodoMapa mapper;
 
     @Override
-    public NodoMapa guardarNodo(NodoMapa nodoMapa) {
-        NodoMapaData data = mapperNodoMapa.toData(nodoMapa);
-        return mapperNodoMapa.toNodoMapa(repository.save(data));
+    public NodoMapa guardarNodoMapa(NodoMapa nodoMapa) {
+        NodoMapaData data = mapper.toData(nodoMapa);
+        return mapper.toNodoMapa(repository.save(data));
+    }
+
+    @Override
+    public NodoMapa actualizarNodoMapa(NodoMapa nodoMapa) {
+        NodoMapaData data = mapper.toData(nodoMapa);
+        return mapper.toNodoMapa(repository.save(data));
+    }
+
+    @Override
+    public NodoMapa buscarPorId(Long id) {
+        return repository.findById(id)
+                .map(mapper::toNodoMapa)
+                .orElse(null);
     }
 
     @Override
     public NodoMapa buscarPorCodigoNodo(String codigoNodo) {
-        NodoMapaData data = repository.finbyCodigoNodo(codigoNodo);
-        return data != null ? mapperNodoMapa.toNodoMapa(data) : null;
+        return repository.findByCodigoNodo(codigoNodo)
+                .map(mapper::toNodoMapa)
+                .orElse(null);
     }
 
     @Override
-    public List<NodoMapa> listarNodos() {
+    public void eliminarPorId(Long id) {
+        repository.deleteById(id);
+    }
+
+    @Override
+    public List<NodoMapa> listarNodosMapa() {
         return repository.findAll()
                 .stream()
-                .map(mapperNodoMapa::toNodoMapa)
+                .map(mapper::toNodoMapa)
                 .toList();
     }
 }

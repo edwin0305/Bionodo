@@ -1,15 +1,18 @@
+
 package com.proyecto.catalogo.infraestructure.driver_adapter.jpa_repository.nodomapa;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 @Entity
+@Table(name = "nodo_mapa")
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "nodo_planta")
 @Data
 public class NodoMapaData {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -26,7 +29,6 @@ public class NodoMapaData {
     @Column(name = "posicion_y", nullable = false)
     private Double posicionY;
 
-    @Column(name = "video_url")
+    @Column(name = "video_url", columnDefinition = "TEXT")
     private String videoUrl;
-
 }

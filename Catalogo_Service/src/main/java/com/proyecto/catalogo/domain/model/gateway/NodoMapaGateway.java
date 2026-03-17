@@ -5,7 +5,16 @@ import com.proyecto.catalogo.domain.model.NodoMapa;
 import java.util.List;
 
 public interface NodoMapaGateway {
-    NodoMapa guardarNodo(NodoMapa nodoMapa);
+
+    NodoMapa guardarNodoMapa(NodoMapa nodoMapa);
+
+    NodoMapa actualizarNodoMapa(NodoMapa nodoMapa);
+
+    NodoMapa buscarPorId(Long id);
+
     NodoMapa buscarPorCodigoNodo(String codigoNodo);
-    List<NodoMapa> listarNodos();
+
+    void eliminarPorId(Long id);
+
+    List<NodoMapa> listarNodosMapa();
 }
