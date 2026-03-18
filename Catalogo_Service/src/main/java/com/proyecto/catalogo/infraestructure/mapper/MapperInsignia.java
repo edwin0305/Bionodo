@@ -6,13 +6,13 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class MapperInsignia {
+
     public Insignia toInsignia(InsigniaData data) {
         return new Insignia(
                 data.getId(),
                 data.getCodigoInsignia(),
                 data.getNombre(),
                 data.getDescripcion(),
-
                 data.getImagenUrl()
         );
     }
@@ -23,7 +23,6 @@ public class MapperInsignia {
                 insignia.getCodigoInsignia(),
                 insignia.getNombre(),
                 insignia.getDescripcion(),
-
                 insignia.getImagenUrl()
         );
     }

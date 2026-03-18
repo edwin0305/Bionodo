@@ -20,19 +20,21 @@ public class ArchivoLocalGatewayImpl implements ArchivoGateway {
     }
 
     @Override
-    public String guardarArchivo(byte[] contenido, String nombreOriginal) {
+    public String guardarArchivo(byte[] contenido, String nombreOriginal, String carpeta) {
         try {
-            if (!Files.exists(root)) {
-                Files.createDirectories(root);
+            Path carpetaDestino = root.resolve(carpeta);
+
+            if (!Files.exists(carpetaDestino)) {
+                Files.createDirectories(carpetaDestino);
             }
 
             String nombreLimpio = nombreOriginal.replaceAll("\\s+", "_");
             String nombreFinal = UUID.randomUUID() + "_" + nombreLimpio;
-            Path rutaArchivo = root.resolve(nombreFinal);
+            Path rutaArchivo = carpetaDestino.resolve(nombreFinal);
 
             Files.write(rutaArchivo, contenido);
 
-            return "/uploads/" + nombreFinal;
+            return "/uploads/" + carpeta + "/" + nombreFinal;
 
         } catch (IOException e) {
             throw new RuntimeException("Error al guardar el archivo", e);
@@ -42,8 +44,8 @@ public class ArchivoLocalGatewayImpl implements ArchivoGateway {
     @Override
     public void eliminarArchivo(String rutaArchivo) {
         try {
-            String nombreArchivo = rutaArchivo.replace("/uploads/", "");
-            Path archivo = root.resolve(nombreArchivo);
+            String rutaRelativa = rutaArchivo.replace("/uploads/", "");
+            Path archivo = root.resolve(rutaRelativa);
             Files.deleteIfExists(archivo);
         } catch (IOException e) {
             throw new RuntimeException("Error al eliminar el archivo", e);

@@ -56,7 +56,10 @@ public class PlantaUseCase {
 
         if (imagenes != null && nombresOriginales != null && imagenes.size() == nombresOriginales.size()) {
             for (int i = 0; i < imagenes.size(); i++) {
-                String rutaImagen = archivoGateway.guardarArchivo(imagenes.get(i), nombresOriginales.get(i));
+                String rutaImagen = archivoGateway.guardarArchivo(
+                        imagenes.get(i),
+                        nombresOriginales.get(i)
+                        ,"plantas");
                 rutas.add(rutaImagen);
             }
         }

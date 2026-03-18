@@ -1,6 +1,5 @@
 package com.proyecto.catalogo.infraestructure.driver_adapter.jpa_repository.insignia;
 
-
 import com.proyecto.catalogo.domain.model.Insignia;
 import com.proyecto.catalogo.domain.model.gateway.InsigniaGateway;
 import com.proyecto.catalogo.infraestructure.mapper.MapperInsignia;
@@ -12,7 +11,8 @@ import java.util.List;
 @Repository
 @RequiredArgsConstructor
 public class InsigniaDataGatewayImpl implements InsigniaGateway {
-    private final InsigniaJPAReposity repository;
+
+    private final InsigniaDataJpaRepository repository;
     private final MapperInsignia mapperInsignia;
 
     @Override
@@ -22,9 +22,28 @@ public class InsigniaDataGatewayImpl implements InsigniaGateway {
     }
 
     @Override
+    public Insignia actualizarInsignia(Insignia insignia) {
+        InsigniaData data = mapperInsignia.toData(insignia);
+        return mapperInsignia.toInsignia(repository.save(data));
+    }
+
+    @Override
+    public Insignia buscarPorId(Long id) {
+        return repository.findById(id)
+                .map(mapperInsignia::toInsignia)
+                .orElse(null);
+    }
+
+    @Override
     public Insignia buscarPorCodigoInsignia(String codigoInsignia) {
-        InsigniaData data = repository.findByCodigoInsignia(codigoInsignia);
-        return data != null ? mapperInsignia.toInsignia(data) : null;
+        return repository.findByCodigoInsignia(codigoInsignia)
+                .map(mapperInsignia::toInsignia)
+                .orElse(null);
+    }
+
+    @Override
+    public void eliminarPorId(Long id) {
+        repository.deleteById(id);
     }
 
     @Override
@@ -35,6 +54,4 @@ public class InsigniaDataGatewayImpl implements InsigniaGateway {
                 .toList();
     }
 }
-
-
 
