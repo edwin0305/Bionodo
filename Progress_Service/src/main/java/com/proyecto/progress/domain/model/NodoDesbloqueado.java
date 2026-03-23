@@ -1,0 +1,21 @@
+package com.proyecto.progress.domain.model;
+
+
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import java.time.LocalDateTime;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+public class NodoDesbloqueado {
+    private Long id;
+    private String emailUsuario;
+    private String codigoNodo;
+    private LocalDateTime fechaDesbloqueo;
+}

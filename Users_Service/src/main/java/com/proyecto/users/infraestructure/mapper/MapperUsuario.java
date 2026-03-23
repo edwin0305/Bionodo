@@ -4,10 +4,21 @@ import com.proyecto.users.domain.model.Usuario;
 import com.proyecto.users.infraestructure.driver_adapter.jpa_repository.usuario.UsuarioData;
 import org.springframework.stereotype.Component;
 
+/**
+ * Mapper encargado de convertir entre el modelo de dominio Usuario
+ * y la entidad de persistencia UsuarioData.
+ */
 @Component
 public class MapperUsuario {
 
+    /**
+     * Convierte UsuarioData (persistencia) a Usuario (dominio).
+     */
     public Usuario toUsuario(UsuarioData usuarioData) {
+        if (usuarioData == null) {
+            return null;
+        }
+
         return new Usuario(
                 usuarioData.getEmail(),
                 usuarioData.getNombre(),
@@ -15,11 +26,17 @@ public class MapperUsuario {
                 usuarioData.getTelefono(),
                 usuarioData.getPassword(),
                 usuarioData.getEdad()
-
         );
     }
 
-    public UsuarioData toData(Usuario usuario) {
+    /**
+     * Convierte Usuario (dominio) a UsuarioData (persistencia).
+     */
+    public UsuarioData toUsuarioData(Usuario usuario) {
+        if (usuario == null) {
+            return null;
+        }
+
         return new UsuarioData(
                 usuario.getEmail(),
                 usuario.getNombre(),

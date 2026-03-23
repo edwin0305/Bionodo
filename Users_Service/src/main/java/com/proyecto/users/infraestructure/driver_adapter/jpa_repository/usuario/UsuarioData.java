@@ -1,30 +1,59 @@
 package com.proyecto.users.infraestructure.driver_adapter.jpa_repository.usuario;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+/**
+ * Entidad JPA que representa un usuario en la base de datos.
+ *
+ * Se utiliza el correo electrónico como identificador único del usuario.
+ */
 @Entity
-@AllArgsConstructor
+@Table(name = "usuarios")
+@Getter
+@Setter
 @NoArgsConstructor
-@Table (name = "usuario")
-@Data //solo se utiliza para el tema de la base de datos
-
+@AllArgsConstructor
 public class UsuarioData {
 
-    //las anotaciones para los atributos van encima del atributo, significa que afectan al atributo que estè debajo
+    /**
+     * Correo electrónico del usuario.
+     * Se utiliza como clave primaria.
+     */
     @Id
-    @Column(unique = true, nullable = false)
+    @Column(nullable = false, unique = true, length = 100)
     private String email;
-    @Column(nullable = false)
+
+    /**
+     * Nombre del usuario (solo letras y espacios).
+     */
+    @Column(nullable = false, length = 100)
     private String nombre;
-    @Column(nullable = false)
+
+    /**
+     * Apellido del usuario (solo letras y espacios).
+     */
+    @Column(nullable = false, length = 100)
     private String apellido;
-    @Column(nullable = false)
+
+    /**
+     * Número de teléfono del usuario.
+     */
+    @Column(nullable = false, length = 20)
     private String telefono;
-    @Column(nullable = false)
+
+    /**
+     * Contraseña encriptada del usuario.
+     */
+    @Column(nullable = false, length = 255)
     private String password;
+
+    /**
+     * Edad del usuario.
+     */
     @Column(nullable = false)
     private Integer edad;
-
 }
