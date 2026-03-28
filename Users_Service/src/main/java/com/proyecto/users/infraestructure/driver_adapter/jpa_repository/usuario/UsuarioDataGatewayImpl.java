@@ -29,7 +29,7 @@ public class UsuarioDataGatewayImpl implements UsuarioGateway {
      */
     @Override
     public Usuario guardarUsuario(Usuario usuario) {
-        UsuarioData usuarioData = mapperUsuario.toData(usuario);
+        UsuarioData usuarioData = mapperUsuario.toUsuarioData(usuario);
         return mapperUsuario.toUsuario(repository.save(usuarioData));
     }
 
@@ -41,7 +41,7 @@ public class UsuarioDataGatewayImpl implements UsuarioGateway {
      */
     @Override
     public Usuario actualizarUsuario(Usuario usuario) {
-        UsuarioData usuarioData = mapperUsuario.toData(usuario);
+        UsuarioData usuarioData = mapperUsuario.toUsuarioData(usuario);
         return mapperUsuario.toUsuario(repository.save(usuarioData));
     }
 
