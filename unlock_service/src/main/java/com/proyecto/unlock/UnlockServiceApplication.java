@@ -1,0 +1,12 @@
+package com.proyecto.unlock;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class UnlockServiceApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(UnlockServiceApplication.class, args);
+    }
+}

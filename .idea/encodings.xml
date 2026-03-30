@@ -5,5 +5,7 @@
     <file url="file://$PROJECT_DIR$/Users_Service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/unlock-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/unlock-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/unlock_service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/unlock_service/src/main/resources" charset="UTF-8" />
   </component>
 </project>
