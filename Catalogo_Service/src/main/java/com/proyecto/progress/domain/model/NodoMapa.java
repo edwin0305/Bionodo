@@ -16,6 +16,6 @@ public class NodoMapa {
     private String nombreNodo;
     private Double posicionX;
     private Double posicionY;
-    private String VideoUrl;
+    private String videoUrl;
 
 }

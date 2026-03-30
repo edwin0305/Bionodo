@@ -51,6 +51,9 @@ public class NodoMapaUseCase {
         if (nodoMapa.getPosicionY() == null) {
             throw new RuntimeException("La posición Y es obligatoria");
         }
+        if (nodoMapa.getVideoUrl()==null){
+            throw new RuntimeException("La url del video es obligatoria");
+        }
 
         NodoMapa nodoExistente = nodoMapaGateway.buscarPorId(nodoMapa.getId());
         if (nodoExistente == null) {
