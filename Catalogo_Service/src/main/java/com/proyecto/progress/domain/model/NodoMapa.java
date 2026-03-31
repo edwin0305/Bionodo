@@ -17,5 +17,5 @@ public class NodoMapa {
     private Double posicionX;
     private Double posicionY;
     private String videoUrl;
-
+    private String nombreCientificoPlanta;
 }
