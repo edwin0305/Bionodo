@@ -45,7 +45,7 @@ public class UsuarioController {
             Usuario usuarioEncontrado = usuarioUseCase.buscarPorIdUsuario(email);
 
             if (usuarioEncontrado == null) {
-                return ResponseEntity.status(HttpStatus.OK).build();
+                return ResponseEntity.notFound().build();
             }
             return ResponseEntity.ok(usuarioEncontrado);
         } catch (Exception e) {

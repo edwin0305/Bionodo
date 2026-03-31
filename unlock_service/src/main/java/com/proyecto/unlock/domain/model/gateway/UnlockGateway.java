@@ -8,7 +8,7 @@ public interface UnlockGateway {
 
     Unlock guardarUnlock(Unlock unlock);
 
-    Unlock buscarPorUserIdYCodigoNodo(Long userId, String codigoNodo);
+    Unlock buscarPorUserEmailYCodigoNodo(String userEmail, String codigoNodo);
 
-    List<Unlock> listarPorUsuario(Long userId);
+    List<Unlock> listarPorUsuario(String userEmail);
 }
