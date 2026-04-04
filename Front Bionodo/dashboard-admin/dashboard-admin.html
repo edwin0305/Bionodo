@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Administrador - BIONODO</title>
+  <link rel="icon" type="image/png" href="../assets/logo.png">
+  <script src="../assets/runtime-config.js"></script>
+  <link rel="stylesheet" href="dashboard-admin.css">
+</head>
+<body>
+  <div class="background"></div>
+
+  <main class="dashboard-container">
+    <section class="dashboard-card">
+      <div class="logo-container">
+        <img src="../assets/logo.png" alt="Logo de Bionodo">
+      </div>
+
+      <div class="dashboard-header">
+        <h1>BIONODO</h1>
+        <p class="subtitle">Panel principal del administrador</p>
+      </div>
+
+      <section class="welcome-box">
+        <h2>Bienvenido al panel de administración</h2>
+        <p>
+          Desde aquí puedes gestionar los módulos principales del sistema:
+          usuarios, plantas, nodos e insignias.
+        </p>
+      </section>
+
+      <section class="modules-grid">
+        <article class="module-card">
+          <div class="module-icon">👤</div>
+          <h3>Usuarios</h3>
+          <p>Consulta, administra y elimina usuarios registrados.</p>
+          <button class="btn-module" onclick="goToUsuarios()">Ir a usuarios</button>
+        </article>
+
+        <article class="module-card">
+          <div class="module-icon">🌿</div>
+          <h3>Plantas</h3>
+          <p>Gestiona el catálogo de especies vegetales registradas.</p>
+          <button class="btn-module" onclick="goToPlantas()">Ir a plantas</button>
+        </article>
+
+        <article class="module-card">
+          <div class="module-icon">📍</div>
+          <h3>Nodos</h3>
+          <p>Administra nodos del mapa y puntos de exploración del campus.</p>
+          <button class="btn-module" onclick="goToNodos()">Ir a nodos</button>
+        </article>
+
+        <article class="module-card">
+          <div class="module-icon">🏅</div>
+          <h3>Insignias</h3>
+          <p>Configura y administra insignias disponibles en el sistema.</p>
+          <button class="btn-module" onclick="goToInsignias()">Ir a insignias</button>
+        </article>
+      </section>
+
+      <div class="dashboard-actions">
+        <button class="btn-secondary" onclick="cerrarSesion()">Cerrar sesión</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="../assets/app-config.js"></script>
+  <script src="dashboard-admin.js"></script>
+</body>
+</html>
