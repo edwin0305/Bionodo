@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="08784d8c-23ab-44fe-8e8a-562fce0cef91" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Catalogo_Service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Catalogo_Service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Catalogo_Service/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Catalogo_Service/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Catalogo_Service/target/classes/com/proyecto/progress/infraestructure/driver_adapter/jpa_repository/planta/PlantaData.class" beforeDir="false" afterPath="$PROJECT_DIR$/Catalogo_Service/target/classes/com/proyecto/progress/infraestructure/driver_adapter/jpa_repository/planta/PlantaData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Catalogo_Service/target/classes/com/proyecto/progress/infraestructure/driver_adapter/storage/ArchivoLocalGatewayImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/Catalogo_Service/target/classes/com/proyecto/progress/infraestructure/driver_adapter/storage/ArchivoLocalGatewayImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Progress_Service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Progress_Service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Progress_Service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Progress_Service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Progress_Service/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Progress_Service/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Users_Service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Users_Service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Users_Service/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Users_Service/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unlock_service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/unlock_service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unlock_service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/unlock_service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unlock_service/target/classes/com/proyecto/unlock/application/config/UnlockUseCaseConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/unlock_service/target/classes/com/proyecto/unlock/application/config/UnlockUseCaseConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unlock_service/target/classes/com/proyecto/unlock/infraestructure/driver_adapter/jpa_repository/UnlockData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unlock_service/target/classes/com/proyecto/unlock/infraestructure/driver_adapter/jpa_repository/unlock/UnlockDataGatewayImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/unlock_service/target/classes/com/proyecto/unlock/infraestructure/driver_adapter/jpa_repository/unlock/UnlockDataGatewayImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unlock_service/target/classes/com/proyecto/unlock/infraestructure/driver_adapter/jpa_repository/unlock/UnlockDataJpaRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/unlock_service/target/classes/com/proyecto/unlock/infraestructure/driver_adapter/jpa_repository/unlock/UnlockDataJpaRepository.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3BVNt8zBUdyeto8EhLOfMN2pLzU" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "Spring Boot.CatalogoServiceApplication.executor": "Run",
+    "Spring Boot.ProgressServiceApplication.executor": "Run",
+    "Spring Boot.UnlockServiceApplication.executor": "Run",
+    "Spring Boot.UsersServiceApplication.executor": "Run",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/USUARIO/Downloads/GIT_PROYECTOS_2026/Bionodo/unlock_service/src/main/java/com/proyecto/unlock/infraestructure",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/USUARIO/Downloads/GIT_PROYECTOS_2026/Bionodo/unlock_service/src/main/java/org/example/Main.java"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\USUARIO\Downloads\GIT_PROYECTOS_2026\Bionodo\unlock_service\src\main\java\com\proyecto\unlock\infraestructure" />
+      <recent name="C:\Users\USUARIO\Downloads\GIT_PROYECTOS_2026\Bionodo\unlock_service\.mvn" />
+      <recent name="C:\Users\USUARIO\Downloads\GIT_PROYECTOS_2026\Bionodo" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="Proyecto" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="Proyecto" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="08784d8c-23ab-44fe-8e8a-562fce0cef91" name="Changes" comment="" />
+      <created>1774570490899</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1774570490899</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-core" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.security:spring-security-core" />
+    <option featureType="dependencySupport" implementationName="java:jakarta.persistence:jakarta.persistence-api" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.data:spring-data-commons" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.boot:spring-boot" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-webmvc" />
+    <option featureType="dependencySupport" implementationName="java:org.projectlombok:lombok" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/unlock_service/src/main/java/com/proyecto/unlock/UnlockServiceApplication.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
