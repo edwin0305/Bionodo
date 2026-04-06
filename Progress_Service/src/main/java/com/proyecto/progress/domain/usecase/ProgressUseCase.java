@@ -17,6 +17,8 @@ public class ProgressUseCase {
     private final NodoDesbloqueadoGateway nodoDesbloqueadoGateway;
     private final InsigniaDesbloqueadaGateway insigniaDesbloqueadaGateway;
     private final CatalogoGateway catalogoGateway;
+    private final int unlockStep;
+    private final List<String> insigniaCodes;
 
     public NodoDesbloqueado desbloquearNodo(String emailUsuario, String codigoNodo) {
 
@@ -36,7 +38,7 @@ public class ProgressUseCase {
                 nodoDesbloqueadoGateway.findByEmailUsuarioAndCodigoNodo(emailUsuario, codigoNodo);
 
         if (existente != null) {
-            throw new RuntimeException("El nodo ya fue desbloqueado por este usuario");
+            return existente;
         }
 
         NodoDesbloqueado nodo = new NodoDesbloqueado();
@@ -44,7 +46,11 @@ public class ProgressUseCase {
         nodo.setCodigoNodo(codigoNodo);
         nodo.setFechaDesbloqueo(LocalDateTime.now());
 
-        return nodoDesbloqueadoGateway.save(nodo);
+        NodoDesbloqueado nodoGuardado = nodoDesbloqueadoGateway.save(nodo);
+        long totalDesbloqueados = nodoDesbloqueadoGateway.countByEmailUsuario(emailUsuario);
+        asignarInsigniasPorHitos(emailUsuario, totalDesbloqueados);
+
+        return nodoGuardado;
     }
 
     public InsigniaDesbloqueada desbloquearInsignia(String emailUsuario, String codigoInsignia) {
@@ -120,5 +126,41 @@ public class ProgressUseCase {
                 porcentajeProgreso,
                 insigniasDesbloqueadas
         );
+    }
+
+    private void asignarInsigniasPorHitos(String emailUsuario, long totalDesbloqueados) {
+        if (unlockStep <= 0 || insigniaCodes == null || insigniaCodes.isEmpty()) {
+            return;
+        }
+
+        long hitosGanados = totalDesbloqueados / unlockStep;
+
+        for (int indice = 0; indice < hitosGanados && indice < insigniaCodes.size(); indice++) {
+            String codigoInsignia = insigniaCodes.get(indice);
+
+            if (codigoInsignia == null || codigoInsignia.isBlank()) {
+                continue;
+            }
+
+            String codigoNormalizado = codigoInsignia.trim();
+
+            InsigniaDesbloqueada existente =
+                    insigniaDesbloqueadaGateway.findByEmailUsuarioAndCodigoInsignia(emailUsuario, codigoNormalizado);
+
+            if (existente != null) {
+                continue;
+            }
+
+            if (!catalogoGateway.existeInsigniaPorCodigo(codigoNormalizado)) {
+                continue;
+            }
+
+            InsigniaDesbloqueada insignia = new InsigniaDesbloqueada();
+            insignia.setEmailUsuario(emailUsuario);
+            insignia.setCodigoInsignia(codigoNormalizado);
+            insignia.setFechaObtencion(LocalDateTime.now());
+
+            insigniaDesbloqueadaGateway.save(insignia);
+        }
     }
 }

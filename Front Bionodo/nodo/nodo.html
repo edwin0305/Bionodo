@@ -1,0 +1,201 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Experiencia BIONODO</title>
+  <link rel="icon" type="image/png" href="../assets/logo.png">
+  <script src="../assets/runtime-config.js"></script>
+  <link rel="stylesheet" href="nodo.css">
+</head>
+<body>
+  <div class="background"></div>
+
+  <main class="experience-shell">
+    <section class="experience-card">
+      <header class="experience-header">
+        <a class="brand-lockup" href="../index.html">
+          <img src="../assets/logo.png" alt="Logo BIONODO">
+          <div>
+            <strong>BIONODO</strong>
+            <span>Experiencia inmersiva del nodo</span>
+          </div>
+        </a>
+
+        <div class="header-actions">
+          <button type="button" class="btn-secondary" onclick="volverMapa()">Volver al mapa</button>
+          <button type="button" class="btn-secondary" onclick="cerrarSesion()">Cerrar sesion</button>
+        </div>
+      </header>
+
+      <div id="message" class="message"></div>
+
+      <section class="status-strip">
+        <div class="status-copy">
+          <span class="status-eyebrow">Estado de la experiencia</span>
+          <p id="statusText">Cargando informacion del nodo...</p>
+        </div>
+        <div class="status-chip">Recorrido activo</div>
+      </section>
+
+      <section class="hero-layout">
+        <article class="hero-copy-card">
+          <span id="nodeCodeBadge" class="pill">Nodo</span>
+          <h1 id="nombreNodo">Cargando nodo...</h1>
+          <div class="headline-meta">
+            <div class="meta-block">
+              <span class="meta-label">Codigo del nodo</span>
+              <strong id="codigoNodo">---</strong>
+            </div>
+            <div class="meta-block">
+              <span class="meta-label">Nombre cientifico</span>
+              <strong id="nombreCientificoPlanta">---</strong>
+            </div>
+            <div class="meta-block">
+              <span class="meta-label">Nombre comun</span>
+              <strong id="nombreComun">---</strong>
+            </div>
+          </div>
+
+          <p id="heroDescription" class="hero-description">
+            Estamos preparando la informacion principal de la planta asociada a este nodo.
+          </p>
+
+          <div class="hero-info-grid">
+            <article class="hero-stat-card">
+              <span>Galeria disponible</span>
+              <strong id="heroMetricMedia">---</strong>
+            </article>
+            <article class="hero-stat-card">
+              <span>Contenido del nodo</span>
+              <strong id="heroMetricVideo">---</strong>
+            </article>
+            <article class="hero-stat-card">
+              <span>Rutas del asistente</span>
+              <strong id="heroMetricTopics">---</strong>
+            </article>
+          </div>
+        </article>
+
+        <article class="gallery-card">
+          <div class="main-image-frame">
+            <img id="imagenPrincipal" src="" alt="Imagen principal de la planta" class="hidden">
+            <div id="imageFallback" class="image-fallback">
+              Aun no hay una imagen principal cargada para esta planta.
+            </div>
+          </div>
+
+          <div id="galeriaPlanta" class="thumb-grid"></div>
+        </article>
+      </section>
+
+      <section class="summary-layout">
+        <article class="progress-card">
+          <div class="section-heading">
+            <span class="section-tag">Tu progreso</span>
+            <h2>Avance dentro del recorrido BIONODO</h2>
+          </div>
+
+          <p id="progressText" class="progress-copy">Calculando progreso...</p>
+          <div class="progress-bar">
+            <div id="progressFill" class="progress-fill"></div>
+          </div>
+        </article>
+
+        <article class="insignias-card">
+          <div class="section-heading">
+            <span class="section-tag">Insignias</span>
+            <h2>Desbloqueos del usuario</h2>
+          </div>
+
+          <div id="insigniasContainer" class="insignias-grid">
+            <p class="empty-text">Cargando insignias...</p>
+          </div>
+        </article>
+      </section>
+
+      <section class="chatbot-panel">
+        <div class="chatbot-header">
+          <div>
+            <span class="section-tag">Chatbot botanico</span>
+            <h2 id="assistantHeadline">Preparando el contexto del asistente...</h2>
+            <p id="assistantLead">
+              Cuando la planta termine de cargar, aqui veras una guia clara para explorarla con el chatbot.
+            </p>
+          </div>
+
+          <div class="chatbot-presence">
+            <span class="presence-dot"></span>
+            <div>
+              <strong>Asistente en linea</strong>
+              <span id="chatTopicCount">0 rutas botanicas activas</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="chatbot-support-grid">
+          <div id="assistantSignals" class="assistant-signals"></div>
+
+          <article class="video-card compact-video-card">
+            <div class="section-heading compact-heading">
+              <span class="section-tag">Contenido del nodo</span>
+              <h3>Video o referencia audiovisual</h3>
+            </div>
+
+            <div class="video-wrapper" id="videoWrapper"></div>
+          </article>
+        </div>
+
+        <div class="chatbot-stage-shell">
+          <aside class="chatbot-side-rail">
+            <article class="side-rail-card">
+              <span class="rail-tag">Rutas sugeridas</span>
+              <h3>Explora por temas</h3>
+              <div id="chatCategoryGroups" class="chat-category-groups"></div>
+            </article>
+          </aside>
+
+          <div class="chatbot-main">
+            <section class="chatbot-spotlight">
+              <div class="spotlight-orb">
+                <div class="spotlight-core"></div>
+              </div>
+
+              <div class="spotlight-copy">
+                <span class="spotlight-kicker">Ruta activa</span>
+                <h3 id="chatSpotlightTitle">Exploracion botanica guiada</h3>
+                <p id="chatSpotlightText">
+                  Selecciona una ruta para activar una conversacion mas inmersiva con el asistente del nodo.
+                </p>
+              </div>
+
+              <div id="chatMoodPills" class="chat-mood-pills"></div>
+            </section>
+
+            <div class="chat-window">
+              <div id="chatbotMessages" class="chatbot-messages"></div>
+            </div>
+
+            <div class="chatbot-guided-note">
+              <span class="rail-tag">Modo guiado</span>
+              <p>
+                La conversacion funciona con rutas sugeridas y botones de seguimiento para mantener respuestas claras y consistentes.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <div id="imageViewerModal" class="modal hidden">
+    <div class="modal-content image-viewer-modal">
+      <button type="button" id="closeImageViewerBtn" class="close-image-btn">x</button>
+      <img id="imageViewerImg" src="" alt="Vista ampliada">
+    </div>
+  </div>
+
+  <script src="../assets/app-config.js"></script>
+  <script src="nodo.js"></script>
+</body>
+</html>

@@ -28,3 +28,23 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+# ========================
+# BIONODO CONFIG
+# ========================
+
+# Ignorar imágenes de plantas
+Catalogo_Service/uploads/plantas/
+
+# Mantener insignias (NO ignorar)
+!Catalogo_Service/uploads/insignias/
+
+# Ignorar compilados de Java
+target/
+*.class
+
+# Logs
+*.log
+
+# Archivos temporales
+*.tmp

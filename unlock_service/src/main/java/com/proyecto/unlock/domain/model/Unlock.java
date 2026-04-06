@@ -12,7 +12,6 @@ import lombok.Setter;
 public class Unlock {
 
     private Long id;
-    private Long userId;
+    private String userEmail;
     private String codigoNodo;
-    private Boolean desbloqueado;
 }

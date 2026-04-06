@@ -19,8 +19,8 @@ public class CatalogoUseCaseConfig {//por cada caso de uso se agrega eso
     }
 
     @Bean
-    public NodoMapaUseCase nodoMapaUseCase(NodoMapaGateway nodoMapaGateway)  {
-        return new NodoMapaUseCase(nodoMapaGateway);
+    public NodoMapaUseCase nodoMapaUseCase(NodoMapaGateway nodoMapaGateway, PlantaGateway plantaGateway)  {
+        return new NodoMapaUseCase(nodoMapaGateway, plantaGateway);
     }
     @Bean
     public InsigniaUseCase insigniaUseCase(InsigniaGateway insigniaGateway) {

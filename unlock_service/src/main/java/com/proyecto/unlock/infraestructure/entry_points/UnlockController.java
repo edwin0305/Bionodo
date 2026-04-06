@@ -9,6 +9,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/proyecto/unlock")
 @RequiredArgsConstructor
@@ -18,7 +20,8 @@ public class UnlockController {
     private final MapperUnlock mapperUnlock;
 
     @PostMapping("/save")
-    public ResponseEntity<?> desbloquearNodo(@RequestBody UnlockData unlockData) {
+    public ResponseEntity<String> desbloquearNodo(@RequestBody UnlockData unlockData) {
+
         Unlock unlock = mapperUnlock.toUnlock(unlockData);
         String resultado = unlockUseCase.desbloquearNodo(unlock);
 
@@ -30,8 +33,11 @@ public class UnlockController {
     }
 
     @GetMapping("/buscar")
-    public ResponseEntity<?> buscarUnlock(@RequestParam Long userId, @RequestParam String codigoNodo) {
-        Unlock unlock = unlockUseCase.buscarPorUserIdYCodigoNodo(userId, codigoNodo);
+    public ResponseEntity<Unlock> buscarUnlock(
+            @RequestParam String userEmail,
+            @RequestParam String codigoNodo
+    ) {
+        Unlock unlock = unlockUseCase.buscarPorUserEmailYCodigoNodo(userEmail, codigoNodo);
 
         if (unlock == null) {
             return ResponseEntity.notFound().build();
@@ -40,8 +46,11 @@ public class UnlockController {
         return ResponseEntity.ok(unlock);
     }
 
-    @GetMapping("/listar/{userId}")
-    public ResponseEntity<?> listarPorUsuario(@PathVariable Long userId) {
-        return ResponseEntity.ok(unlockUseCase.listarPorUsuario(userId));
+    @GetMapping("/listar/{userEmail}")
+    public ResponseEntity<List<Unlock>> listarPorUsuario(@PathVariable String userEmail) {
+
+        List<Unlock> desbloqueos = unlockUseCase.listarPorUsuario(userEmail);
+
+        return ResponseEntity.ok(desbloqueos);
     }
 }

@@ -8,13 +8,13 @@ public interface NodoMapaGateway {
 
     NodoMapa guardarNodoMapa(NodoMapa nodoMapa);
 
-    NodoMapa actualizarNodoMapa(NodoMapa nodoMapa);
-
     NodoMapa buscarPorId(Long id);
 
     NodoMapa buscarPorCodigoNodo(String codigoNodo);
 
-    void eliminarPorId(Long id);
+    NodoMapa actualizarNodoMapa(NodoMapa nodoMapa);
+
+    void eliminarNodoMapa(Long id);
 
     List<NodoMapa> listarNodosMapa();
 }

@@ -7,13 +7,13 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-import java.util.stream.Collectors;
+
 @Repository
 @RequiredArgsConstructor
 public class UnlockDataGatewayImpl implements UnlockGateway {
+
     private final UnlockDataJpaRepository repository;
     private final MapperUnlock mapperUnlock;
-
 
     @Override
     public Unlock guardarUnlock(Unlock unlock) {
@@ -22,17 +22,17 @@ public class UnlockDataGatewayImpl implements UnlockGateway {
     }
 
     @Override
-    public Unlock buscarPorUserIdYCodigoNodo(Long userId, String codigoNodo) {
-        UnlockData data = repository.findByUserIdAndCodigoNodo(userId, codigoNodo);
-        return data != null ? mapperUnlock.toUnlock(data) : null;
+    public Unlock buscarPorUserEmailYCodigoNodo(String userEmail, String codigoNodo) {
+        return repository.findByUserEmailAndCodigoNodo(userEmail, codigoNodo)
+                .map(mapperUnlock::toUnlock)
+                .orElse(null);
     }
 
     @Override
-    public List<Unlock> listarPorUsuario(Long userId) {
-        return repository.findByUserId(userId)
+    public List<Unlock> listarPorUsuario(String userEmail) {
+        return repository.findByUserEmail(userEmail)
                 .stream()
                 .map(mapperUnlock::toUnlock)
-                .collect(Collectors.toList());
+                .toList();
     }
 }
-

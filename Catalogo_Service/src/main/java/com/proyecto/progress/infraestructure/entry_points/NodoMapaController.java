@@ -79,10 +79,16 @@ public class NodoMapaController {
     @DeleteMapping("/eliminar/{id}")
     public ResponseEntity<String> eliminarNodoMapa(@PathVariable Long id) {
         try {
-            nodoMapaUseCase.eliminarNodoMapa(id);
-            return ResponseEntity.ok("NodoMapa eliminado exitosamente");
+            String resultado = nodoMapaUseCase.eliminarNodoMapa(id);
+
+            if (resultado.equals("NodoMapa eliminado correctamente")) {
+                return ResponseEntity.ok(resultado);
+            }
+
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resultado);
+
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body("Error al eliminar el nodo: " + e.getMessage());
         }
     }

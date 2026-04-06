@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plantas - BIONODO</title>
+  <link rel="icon" type="image/png" href="../../assets/logo.png">
+  <script src="../../assets/runtime-config.js"></script>
+  <link rel="stylesheet" href="plantas-admin.css">
+</head>
+<body>
+  <div class="background"></div>
+
+  <main class="plantas-container">
+    <section class="plantas-card">
+      <div class="logo-container">
+        <img src="../../assets/logo.png" alt="Logo de Bionodo">
+      </div>
+
+      <h1>BIONODO</h1>
+      <p class="subtitle">Gestion de plantas</p>
+
+      <div class="top-actions">
+        <button class="btn-secondary" onclick="volverDashboard()">Volver al dashboard</button>
+        <button class="btn-secondary" onclick="cerrarSesion()">Cerrar sesion</button>
+      </div>
+
+      <section class="accordion-box">
+        <button class="accordion-toggle active" type="button" data-target="buscarSection">
+          <span>Buscar planta por nombre cientifico</span>
+          <span class="accordion-icon">-</span>
+        </button>
+
+        <div class="accordion-content show" id="buscarSection">
+          <div class="search-box">
+            <input type="text" id="searchNombreCientifico" placeholder="Ingrese el nombre cientifico">
+            <button class="btn-primary" id="btnBuscar">Buscar</button>
+            <button class="btn-secondary" id="btnRecargar">Mostrar todas</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="accordion-box">
+        <button class="accordion-toggle" type="button" data-target="agregarSection">
+          <span>Agregar planta</span>
+          <span class="accordion-icon">+</span>
+        </button>
+
+        <div class="accordion-content" id="agregarSection">
+          <form id="plantaForm" class="form-grid" novalidate>
+            <div class="editing-banner full-width" id="editingBanner">
+              Modo edicion activado. Aqui puedes actualizar la informacion textual de la planta seleccionada.
+            </div>
+
+            <div class="form-group">
+              <label for="nombreCientifico">Nombre cientifico</label>
+              <input type="text" id="nombreCientifico" placeholder="Ingrese el nombre cientifico">
+              <small id="nombreCientificoError" class="field-message"></small>
+            </div>
+
+            <div class="form-group">
+              <label for="nombreComun">Nombre comun</label>
+              <input type="text" id="nombreComun" placeholder="Ingrese el nombre comun">
+              <small id="nombreComunError" class="field-message"></small>
+            </div>
+
+            <div class="form-group full-width">
+              <label for="morfologia">Morfologia</label>
+              <textarea id="morfologia" placeholder="Describa la morfologia"></textarea>
+              <small id="morfologiaError" class="field-message"></small>
+            </div>
+
+            <div class="form-group">
+              <label for="origen">Origen</label>
+              <input type="text" id="origen" placeholder="Ingrese el origen">
+              <small id="origenError" class="field-message"></small>
+            </div>
+
+            <div class="form-group">
+              <label for="tipoDeReproduccion">Tipo de reproduccion</label>
+              <input type="text" id="tipoDeReproduccion" placeholder="Ingrese el tipo de reproduccion">
+              <small id="tipoDeReproduccionError" class="field-message"></small>
+            </div>
+
+            <div class="form-group full-width">
+              <label for="biodiversidad">Biodiversidad</label>
+              <textarea id="biodiversidad" placeholder="Describa el aporte a la biodiversidad"></textarea>
+              <small id="biodiversidadError" class="field-message"></small>
+            </div>
+
+            <div class="form-group full-width">
+              <label for="beneficiosAmbientales">Beneficios ambientales</label>
+              <textarea id="beneficiosAmbientales" placeholder="Describa los beneficios ambientales"></textarea>
+              <small id="beneficiosAmbientalesError" class="field-message"></small>
+            </div>
+
+            <div class="form-group full-width">
+              <label for="recomendacionesDeCuidado">Recomendaciones de cuidado</label>
+              <textarea id="recomendacionesDeCuidado" placeholder="Describa las recomendaciones de cuidado"></textarea>
+              <small id="recomendacionesDeCuidadoError" class="field-message"></small>
+            </div>
+
+            <div class="form-group full-width">
+              <label for="imagenes">Imagenes</label>
+              <input type="file" id="imagenes" multiple accept="image/*">
+              <small id="imagenesError" class="field-message"></small>
+              <div id="previewContainer" class="preview-grid"></div>
+            </div>
+
+            <div class="form-actions full-width">
+              <button type="submit" class="btn-primary" id="btnGuardarPlanta">Guardar planta</button>
+              <button type="button" class="btn-primary hidden" id="btnActualizarPlanta">Actualizar planta</button>
+              <button type="button" class="btn-secondary hidden" id="btnCancelarEdicion">Cancelar edicion</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <div id="message" class="message"></div>
+
+      <section class="accordion-box">
+        <button class="accordion-toggle active" type="button" data-target="listaSection">
+          <span>Plantas registradas</span>
+          <span class="accordion-icon">-</span>
+        </button>
+
+        <div class="accordion-content show" id="listaSection">
+          <div class="list-header">
+            <span id="totalPlantas" class="badge">0 plantas</span>
+          </div>
+          <div id="plantasContainer" class="plantas-grid"></div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <div id="detailModal" class="modal hidden">
+    <div class="modal-content large-modal">
+      <h3>Detalle de la planta</h3>
+      <div id="detailContent" class="detail-list"></div>
+      <div id="detailImages" class="detail-images"></div>
+      <button class="btn-primary" id="closeDetailBtn">Cerrar</button>
+    </div>
+  </div>
+
+  <div id="deleteModal" class="modal hidden">
+    <div class="modal-content">
+      <h3>Confirmar eliminacion</h3>
+      <p id="deleteText">¿Deseas eliminar esta planta?</p>
+      <div class="modal-actions">
+        <button class="btn-danger" id="confirmDeleteBtn">Eliminar</button>
+        <button class="btn-secondary" id="cancelDeleteBtn">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="successModal" class="modal hidden">
+    <div class="modal-content">
+      <div class="success-icon">OK</div>
+      <h3>Operacion exitosa</h3>
+      <p id="successText">La accion se realizo correctamente.</p>
+      <button class="btn-primary" id="closeSuccessBtn">Aceptar</button>
+    </div>
+  </div>
+
+  <div id="imageViewerModal" class="modal hidden">
+    <div class="modal-content image-viewer-modal">
+      <button type="button" id="closeImageViewerBtn" class="close-image-btn">x</button>
+      <img id="imageViewerImg" src="" alt="Vista ampliada de la imagen">
+    </div>
+  </div>
+
+  <script src="../../assets/app-config.js"></script>
+  <script src="plantas-admin.js"></script>
+</body>
+</html>
