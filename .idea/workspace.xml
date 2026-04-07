@@ -5,28 +5,56 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="08784d8c-23ab-44fe-8e8a-562fce0cef91" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Catalogo_Service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Catalogo_Service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Catalogo_Service/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Catalogo_Service/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Catalogo_Service/target/classes/com/proyecto/progress/infraestructure/driver_adapter/jpa_repository/planta/PlantaData.class" beforeDir="false" afterPath="$PROJECT_DIR$/Catalogo_Service/target/classes/com/proyecto/progress/infraestructure/driver_adapter/jpa_repository/planta/PlantaData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Catalogo_Service/target/classes/com/proyecto/progress/infraestructure/driver_adapter/storage/ArchivoLocalGatewayImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/Catalogo_Service/target/classes/com/proyecto/progress/infraestructure/driver_adapter/storage/ArchivoLocalGatewayImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Progress_Service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Progress_Service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Progress_Service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Progress_Service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Progress_Service/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Progress_Service/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Users_Service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Users_Service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Users_Service/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Users_Service/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unlock_service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/unlock_service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unlock_service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/unlock_service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unlock_service/target/classes/com/proyecto/unlock/application/config/UnlockUseCaseConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/unlock_service/target/classes/com/proyecto/unlock/application/config/UnlockUseCaseConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unlock_service/target/classes/com/proyecto/unlock/infraestructure/driver_adapter/jpa_repository/UnlockData.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unlock_service/target/classes/com/proyecto/unlock/infraestructure/driver_adapter/jpa_repository/unlock/UnlockDataGatewayImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/unlock_service/target/classes/com/proyecto/unlock/infraestructure/driver_adapter/jpa_repository/unlock/UnlockDataGatewayImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unlock_service/target/classes/com/proyecto/unlock/infraestructure/driver_adapter/jpa_repository/unlock/UnlockDataJpaRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/unlock_service/target/classes/com/proyecto/unlock/infraestructure/driver_adapter/jpa_repository/unlock/UnlockDataJpaRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front Bionodo/assets/app-config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front Bionodo/assets/badge-milestones.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front Bionodo/assets/campus-map.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front Bionodo/assets/fondo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front Bionodo/assets/insignias/insignia-N1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front Bionodo/assets/insignias/insignia-N2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front Bionodo/assets/insignias/insignia-N3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front Bionodo/assets/insignias/insignia-N4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front Bionodo/assets/insignias/insignia-N5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front Bionodo/assets/insignias/insignia-N6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front Bionodo/assets/insignias/insignia-N7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front Bionodo/assets/insignias/insignia-N8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front Bionodo/assets/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front Bionodo/assets/runtime-config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front Bionodo/dashboard-admin/dashboard-admin.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front Bionodo/dashboard-admin/dashboard-admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front Bionodo/dashboard-admin/dashboard-admin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front Bionodo/dashboard-admin/insignias-admin/insignias-admin.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front Bionodo/dashboard-admin/insignias-admin/insignias-admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front Bionodo/dashboard-admin/insignias-admin/insignias-admin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front Bionodo/dashboard-admin/nodos-admin/nodos-admin.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front Bionodo/dashboard-admin/nodos-admin/nodos-admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front Bionodo/dashboard-admin/nodos-admin/nodos-admin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front Bionodo/dashboard-admin/plantas-admin/plantas-admin.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front Bionodo/dashboard-admin/plantas-admin/plantas-admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front Bionodo/dashboard-admin/plantas-admin/plantas-admin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front Bionodo/dashboard-admin/usuarios-admins.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front Bionodo/dashboard-admin/usuarios-admins.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front Bionodo/dashboard-admin/usuarios-admins.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front Bionodo/dashboard-usuario/dashboard-usuario.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front Bionodo/dashboard-usuario/dashboard-usuario.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front Bionodo/dashboard-usuario/dashboard-usuario.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front Bionodo/dashboard-usuario/perfil-usuario.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front Bionodo/dashboard-usuario/perfil-usuario.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front Bionodo/dashboard-usuario/perfil-usuario.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front Bionodo/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front Bionodo/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front Bionodo/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front Bionodo/login/login.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front Bionodo/login/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front Bionodo/login/login.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front Bionodo/nodo/nodo.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front Bionodo/nodo/nodo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front Bionodo/nodo/nodo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front Bionodo/registro/registro.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front Bionodo/registro/registro.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front Bionodo/registro/registro.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,30 +91,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "Spring Boot.CatalogoServiceApplication.executor": "Run",
-    "Spring Boot.ProgressServiceApplication.executor": "Run",
-    "Spring Boot.UnlockServiceApplication.executor": "Run",
-    "Spring Boot.UsersServiceApplication.executor": "Run",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/USUARIO/Downloads/GIT_PROYECTOS_2026/Bionodo/unlock_service/src/main/java/com/proyecto/unlock/infraestructure",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/USUARIO/Downloads/GIT_PROYECTOS_2026/Bionodo/unlock_service/src/main/java/org/example/Main.java"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;Spring Boot.CatalogoServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ProgressServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.UnlockServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.UsersServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/USUARIO/Downloads/GIT_PROYECTOS_2026/Bionodo/unlock_service/src/main/java/com/proyecto/unlock/infraestructure&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/USUARIO/Downloads/GIT_PROYECTOS_2026/Bionodo/unlock_service/src/main/java/org/example/Main.java&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\USUARIO\Downloads\GIT_PROYECTOS_2026\Bionodo\unlock_service\src\main\java\com\proyecto\unlock\infraestructure" />

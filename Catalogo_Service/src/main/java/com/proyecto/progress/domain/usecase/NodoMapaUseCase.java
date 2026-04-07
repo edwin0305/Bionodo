@@ -1,5 +1,9 @@
 package com.proyecto.progress.domain.usecase;
 
+import com.proyecto.progress.domain.exceptions.NodoMapaAlreadyExistException;
+import com.proyecto.progress.domain.exceptions.NodoMapaEmptyException;
+import com.proyecto.progress.domain.exceptions.NodoMapaNotFoundException;
+import com.proyecto.progress.domain.exceptions.PlantaNotFoundException;
 import com.proyecto.progress.domain.model.NodoMapa;
 import com.proyecto.progress.domain.model.Planta;
 import com.proyecto.progress.domain.model.gateway.NodoMapaGateway;
@@ -17,33 +21,33 @@ public class NodoMapaUseCase {
     public String guardarNodoMapa(NodoMapa nodoMapa) {
 
         if (nodoMapa.getCodigoNodo() == null || nodoMapa.getCodigoNodo().trim().isEmpty()) {
-            return "El codigoNodo es obligatorio";
+            throw new NodoMapaEmptyException("El codigoNodo es obligatorio") ;
         }
 
         if (nodoMapa.getNombreNodo() == null || nodoMapa.getNombreNodo().trim().isEmpty()) {
-            return "El nombreNodo es obligatorio";
+            throw new NodoMapaEmptyException("El nombreNodo es obligatorio") ;
         }
 
         if (nodoMapa.getPosicionX() == null) {
-            return "La posicionX es obligatoria";
+            throw new NodoMapaEmptyException("La posicionX es obligatoria") ;
         }
 
         if (nodoMapa.getPosicionY() == null) {
-            return "La posicionY es obligatoria";
+            throw new NodoMapaEmptyException("La posicionY es obligatoria") ;
         }
 
         if (nodoMapa.getVideoUrl() == null || nodoMapa.getVideoUrl().trim().isEmpty()) {
-            return "La videoUrl es obligatoria";
+            throw new NodoMapaEmptyException("La videoUrl es obligatoria") ;
         }
 
         if (nodoMapa.getNombreCientificoPlanta() == null || nodoMapa.getNombreCientificoPlanta().trim().isEmpty()) {
-            return "El nombreCientificoPlanta es obligatorio";
+            throw new NodoMapaEmptyException("El nombreCientificoPlanta es obligatorio") ;
         }
 
         NodoMapa existente = nodoMapaGateway.buscarPorCodigoNodo(nodoMapa.getCodigoNodo().trim());
 
         if (existente != null) {
-            return "Ya existe un nodo con ese codigoNodo";
+            throw new NodoMapaAlreadyExistException("Ya existe un nodo con ese codigoNodo");
         }
 
         Planta plantaExistente = plantaGateway.buscarPorNombreCientifico(
@@ -51,7 +55,7 @@ public class NodoMapaUseCase {
         );
 
         if (plantaExistente == null) {
-            return "La planta asociada no existe";
+            throw new PlantaNotFoundException("La planta asociada no existe");
         }
 
         nodoMapaGateway.guardarNodoMapa(nodoMapa);
@@ -74,37 +78,37 @@ public class NodoMapaUseCase {
     public NodoMapa actualizarNodoMapa(NodoMapa nodoMapa) {
 
         if (nodoMapa.getId() == null) {
-            throw new RuntimeException("El id es obligatorio para actualizar");
+            throw new NodoMapaEmptyException("El id es obligatorio para actualizar");
         }
 
         if (nodoMapa.getCodigoNodo() == null || nodoMapa.getCodigoNodo().trim().isEmpty()) {
-            throw new RuntimeException("El codigoNodo es obligatorio");
+            throw new NodoMapaEmptyException("El codigoNodo es obligatorio");
         }
 
         if (nodoMapa.getNombreNodo() == null || nodoMapa.getNombreNodo().trim().isEmpty()) {
-            throw new RuntimeException("El nombreNodo es obligatorio");
+            throw new NodoMapaEmptyException("El nombreNodo es obligatorio");
         }
 
         if (nodoMapa.getPosicionX() == null) {
-            throw new RuntimeException("La posicionX es obligatoria");
+            throw new NodoMapaEmptyException("La posicionX es obligatoria");
         }
 
         if (nodoMapa.getPosicionY() == null) {
-            throw new RuntimeException("La posicionY es obligatoria");
+            throw new NodoMapaEmptyException("La posicionY es obligatoria");
         }
 
         if (nodoMapa.getVideoUrl() == null || nodoMapa.getVideoUrl().trim().isEmpty()) {
-            throw new RuntimeException("La videoUrl es obligatoria");
+            throw new NodoMapaEmptyException("La videoUrl es obligatoria");
         }
 
         if (nodoMapa.getNombreCientificoPlanta() == null || nodoMapa.getNombreCientificoPlanta().trim().isEmpty()) {
-            throw new RuntimeException("El nombreCientificoPlanta es obligatorio");
+            throw new NodoMapaEmptyException("El nombreCientificoPlanta es obligatorio");
         }
 
         NodoMapa existente = nodoMapaGateway.buscarPorId(nodoMapa.getId());
 
         if (existente == null) {
-            throw new RuntimeException("El nodo no existe");
+            throw new NodoMapaNotFoundException("El nodo no existe");
         }
 
         Planta plantaExistente = plantaGateway.buscarPorNombreCientifico(
@@ -112,7 +116,7 @@ public class NodoMapaUseCase {
         );
 
         if (plantaExistente == null) {
-            throw new RuntimeException("La planta asociada no existe");
+            throw new PlantaNotFoundException("La planta asociada no existe");
         }
 
         return nodoMapaGateway.actualizarNodoMapa(nodoMapa);
@@ -127,7 +131,7 @@ public class NodoMapaUseCase {
         NodoMapa existente = nodoMapaGateway.buscarPorId(id);
 
         if (existente == null) {
-            return "El nodo no existe";
+            throw new NodoMapaNotFoundException("El nodo no existe");
         }
 
         nodoMapaGateway.eliminarNodoMapa(id);

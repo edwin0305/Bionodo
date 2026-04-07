@@ -1,5 +1,8 @@
 package com.proyecto.progress.domain.usecase;
 
+import com.proyecto.progress.domain.exceptions.InsigneaAlreadyExistException;
+import com.proyecto.progress.domain.exceptions.InsigneaEmptyException;
+import com.proyecto.progress.domain.exceptions.InsigneaNotFoundException;
 import com.proyecto.progress.domain.model.Insignia;
 import com.proyecto.progress.domain.model.gateway.InsigniaGateway;
 import lombok.RequiredArgsConstructor;
@@ -14,15 +17,15 @@ public class InsigniaUseCase {
     public String guardarInsignia(Insignia insignia) {
 
         if (insignia.getCodigoInsignia() == null || insignia.getCodigoInsignia().trim().isEmpty()) {
-            return "El código de la insignia es obligatorio";
+            throw new InsigneaEmptyException("El código de la insignia es obligatorio") ;
         }
         if (insignia.getNombre() == null || insignia.getNombre().trim().isEmpty()) {
-            return "El nombre de la insignia es obligatorio";
+            throw new InsigneaEmptyException("El nombre de la insignia es obligatorio") ;
         }
 
         Insignia existente = insigniaGateway.buscarPorCodigoInsignia(insignia.getCodigoInsignia());
         if (existente != null) {
-            return "Ya existe una insignia con ese código";
+            throw new InsigneaAlreadyExistException("Ya existe una insignia con ese código") ;
         }
 
         insigniaGateway.guardarInsignia(insignia);
@@ -32,15 +35,15 @@ public class InsigniaUseCase {
     public Insignia actualizarInsignia(Insignia insignia) {
 
         if (insignia.getId() == null) {
-            throw new RuntimeException("El id de la insignia es obligatorio para actualizar");
+            throw new InsigneaEmptyException("El id de la insignia es obligatorio para actualizar");
         }
 
         if (insignia.getCodigoInsignia() == null || insignia.getCodigoInsignia().trim().isEmpty()) {
-            throw new RuntimeException("El código de la insignia es obligatorio");
+            throw new InsigneaEmptyException("El código de la insignia es obligatorio");
         }
 
         if (insignia.getNombre() == null || insignia.getNombre().trim().isEmpty()) {
-            throw new RuntimeException("El nombre de la insignia es obligatorio");
+            throw new InsigneaEmptyException("El nombre de la insignia es obligatorio");
         }
 
         Insignia existente = insigniaGateway.buscarPorId(insignia.getId());
@@ -50,7 +53,7 @@ public class InsigniaUseCase {
 
         Insignia mismaCodigo = insigniaGateway.buscarPorCodigoInsignia(insignia.getCodigoInsignia());
         if (mismaCodigo != null && !mismaCodigo.getId().equals(insignia.getId())) {
-            throw new RuntimeException("Ya existe otra insignia con ese código");
+            throw new InsigneaAlreadyExistException("Ya existe otra insignia con ese código");
         }
 
         return insigniaGateway.actualizarInsignia(insignia);
@@ -79,7 +82,7 @@ public class InsigniaUseCase {
         Insignia insignia = insigniaGateway.buscarPorId(id);
 
         if (insignia == null) {
-            throw new RuntimeException("No existe una insignia con id: " + id);
+            throw new InsigneaNotFoundException("No existe una insignia con id: " + id);
         }
 
         insigniaGateway.eliminarPorId(id);
