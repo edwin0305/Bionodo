@@ -4,58 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="08784d8c-23ab-44fe-8e8a-562fce0cef91" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Catalogo_Service/target/classes/com/proyecto/progress/infraestructure/driver_adapter/jpa_repository/planta/PlantaData.class" beforeDir="false" afterPath="$PROJECT_DIR$/Catalogo_Service/target/classes/com/proyecto/progress/infraestructure/driver_adapter/jpa_repository/planta/PlantaData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front Bionodo/assets/app-config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front Bionodo/assets/badge-milestones.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front Bionodo/assets/campus-map.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front Bionodo/assets/fondo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front Bionodo/assets/insignias/insignia-N1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front Bionodo/assets/insignias/insignia-N2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front Bionodo/assets/insignias/insignia-N3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front Bionodo/assets/insignias/insignia-N4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front Bionodo/assets/insignias/insignia-N5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front Bionodo/assets/insignias/insignia-N6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front Bionodo/assets/insignias/insignia-N7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front Bionodo/assets/insignias/insignia-N8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front Bionodo/assets/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front Bionodo/assets/runtime-config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front Bionodo/dashboard-admin/dashboard-admin.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front Bionodo/dashboard-admin/dashboard-admin.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front Bionodo/dashboard-admin/dashboard-admin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front Bionodo/dashboard-admin/insignias-admin/insignias-admin.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front Bionodo/dashboard-admin/insignias-admin/insignias-admin.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front Bionodo/dashboard-admin/insignias-admin/insignias-admin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front Bionodo/dashboard-admin/nodos-admin/nodos-admin.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front Bionodo/dashboard-admin/nodos-admin/nodos-admin.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front Bionodo/dashboard-admin/nodos-admin/nodos-admin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front Bionodo/dashboard-admin/plantas-admin/plantas-admin.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front Bionodo/dashboard-admin/plantas-admin/plantas-admin.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front Bionodo/dashboard-admin/plantas-admin/plantas-admin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front Bionodo/dashboard-admin/usuarios-admins.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front Bionodo/dashboard-admin/usuarios-admins.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front Bionodo/dashboard-admin/usuarios-admins.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front Bionodo/dashboard-usuario/dashboard-usuario.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front Bionodo/dashboard-usuario/dashboard-usuario.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front Bionodo/dashboard-usuario/dashboard-usuario.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front Bionodo/dashboard-usuario/perfil-usuario.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front Bionodo/dashboard-usuario/perfil-usuario.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front Bionodo/dashboard-usuario/perfil-usuario.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front Bionodo/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front Bionodo/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front Bionodo/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front Bionodo/login/login.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front Bionodo/login/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front Bionodo/login/login.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front Bionodo/nodo/nodo.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front Bionodo/nodo/nodo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front Bionodo/nodo/nodo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front Bionodo/registro/registro.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front Bionodo/registro/registro.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front Bionodo/registro/registro.js" beforeDir="false" />
-    </list>
+    <list default="true" id="08784d8c-23ab-44fe-8e8a-562fce0cef91" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -66,6 +15,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="Exception" />
       </list>
     </option>
   </component>

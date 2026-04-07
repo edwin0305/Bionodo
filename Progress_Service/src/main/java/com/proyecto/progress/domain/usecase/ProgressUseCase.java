@@ -1,6 +1,10 @@
 package com.proyecto.progress.domain.usecase;
 
 
+import com.proyecto.progress.domain.exceptions.CodigoNodoEmptyException;
+import com.proyecto.progress.domain.exceptions.EmailEmptyException;
+import com.proyecto.progress.domain.exceptions.InsigneaNotFoundException;
+import com.proyecto.progress.domain.exceptions.NodoMapaNotFoundException;
 import com.proyecto.progress.domain.model.InsigniaDesbloqueada;
 import com.proyecto.progress.domain.model.NodoDesbloqueado;
 import com.proyecto.progress.domain.model.ResumenProgreso;
@@ -23,15 +27,15 @@ public class ProgressUseCase {
     public NodoDesbloqueado desbloquearNodo(String emailUsuario, String codigoNodo) {
 
         if (emailUsuario == null || emailUsuario.isBlank()) {
-            throw new RuntimeException("El email del usuario es obligatorio");
+            throw new EmailEmptyException("El email del usuario es obligatorio");
         }
 
         if (codigoNodo == null || codigoNodo.isBlank()) {
-            throw new RuntimeException("El código del nodo es obligatorio");
+            throw new EmailEmptyException("El código del nodo es obligatorio");
         }
 
         if (!catalogoGateway.existeNodoPorCodigo(codigoNodo)) {
-            throw new RuntimeException("El nodo no existe en el catálogo");
+            throw new NodoMapaNotFoundException("El nodo no existe en el catálogo");
         }
 
         NodoDesbloqueado existente =
@@ -56,15 +60,15 @@ public class ProgressUseCase {
     public InsigniaDesbloqueada desbloquearInsignia(String emailUsuario, String codigoInsignia) {
 
         if (emailUsuario == null || emailUsuario.isBlank()) {
-            throw new RuntimeException("El email del usuario es obligatorio");
+            throw new EmailEmptyException("El email del usuario es obligatorio");
         }
 
         if (codigoInsignia == null || codigoInsignia.isBlank()) {
-            throw new RuntimeException("El código de la insignia es obligatorio");
+            throw new CodigoNodoEmptyException("El código de la insignia es obligatorio");
         }
 
         if (!catalogoGateway.existeInsigniaPorCodigo(codigoInsignia)) {
-            throw new RuntimeException("La insignia no existe en el catálogo");
+            throw new InsigneaNotFoundException("La insignia no existe en el catálogo");
         }
 
         InsigniaDesbloqueada existente =
@@ -85,7 +89,7 @@ public class ProgressUseCase {
     public List<NodoDesbloqueado> obtenerNodosPorUsuario(String emailUsuario) {
 
         if (emailUsuario == null || emailUsuario.isBlank()) {
-            throw new RuntimeException("El email del usuario es obligatorio");
+            throw new EmailEmptyException("El email del usuario es obligatorio");
         }
 
         return nodoDesbloqueadoGateway.findByEmailUsuario(emailUsuario);
@@ -94,7 +98,7 @@ public class ProgressUseCase {
     public List<InsigniaDesbloqueada> obtenerInsigniasPorUsuario(String emailUsuario) {
 
         if (emailUsuario == null || emailUsuario.isBlank()) {
-            throw new RuntimeException("El email del usuario es obligatorio");
+            throw new EmailEmptyException("El email del usuario es obligatorio");
         }
 
         return insigniaDesbloqueadaGateway.findByEmailUsuario(emailUsuario);
@@ -103,7 +107,7 @@ public class ProgressUseCase {
     public ResumenProgreso obtenerResumen(String emailUsuario, int totalNodos) {
 
         if (emailUsuario == null || emailUsuario.isBlank()) {
-            throw new RuntimeException("El email del usuario es obligatorio");
+            throw new EmailEmptyException("El email del usuario es obligatorio");
         }
 
         if (totalNodos < 0) {
